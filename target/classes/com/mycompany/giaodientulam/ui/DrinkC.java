@@ -9,7 +9,7 @@ import com.mycompany.giaodientulam.entity.Bill;
  * @author Lenovo
  */
 public interface DrinkC {
-        void setBill(Bill bill);
+    void setBill(Bill bill);
     void open();
     void fillCategories();
     void fillDrinks();

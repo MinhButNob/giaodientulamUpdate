@@ -10,7 +10,6 @@ import com.mycompany.giaodientulam.entity.Bill;
 import com.mycompany.giaodientulam.entity.billDetail;
 import com.mycompany.giaodientulam.impl.BillDAOimpl;
 import com.mycompany.giaodientulam.impl.BillDetailDAOImpl;
-import com.mycompany.giaodientulam.ui.manager.CardManager;
 import com.mycompany.giaodientulam.util.XDate;
 import com.mycompany.giaodientulam.util.XDialog;
 import java.awt.Frame;
@@ -389,35 +388,36 @@ public class BillJDialog extends javax.swing.JDialog implements BillC {
     }
 
     void setForm(Bill bill) {
-//        txtId.setText(String.valueOf(bill.getId()));
-//        txtCardId.setText("Card #" + bill.getCardId());
-//        txtCheckin.setText(XDate.format(bill.getCheckin(), "HH:mm:ss dd-MM-yyyy"));
-//        txtUsername.setText(bill.getUsername());
-//        String[] statuses = {"Servicing", "Completed", "Canceled"};
-//        txtStatus.setText(statuses[bill.getStatus()]);
-//        if (bill.getCheckout() != null) {
-//            txtCheckout.setText(XDate.format(bill.getCheckout(), "HH:mm:ss dd-MM-yyyy"));
-//        }
-//
-//        boolean editable = (bill.getStatus() == 0);
-//        btnAdd.setEnabled(editable);
-//        btnCancel.setEnabled(editable);
-//        btnCheckout.setEnabled(editable);
-//        btnRemove.setEnabled(editable);
-   txtId.setText(String.valueOf(bill.getId())); 
-    txtCardId.setText("Card #" + bill.getCardId()); 
-    txtCheckin.setText(XDate.format(bill.getCheckin(), "HH:mm:ss dd-MM-yyyy")); 
-    txtUsername.setText(bill.getUsername()); 
-    String[] statuses = {"Servicing", "Completed", "Canceled"}; 
-    txtStatus.setText(statuses[bill.getStatus()]); 
-    if (bill.getCheckout() != null) { 
-        txtCheckout.setText(XDate.format(bill.getCheckout(), "HH:mm:ss dd-MM-yyyy")); 
-    } 
-    boolean editable = (bill.getStatus() == 0); 
-    btnAdd.setEnabled(editable); 
-    btnCancel.setEnabled(editable); 
-    btnCheckout.setEnabled(editable); 
-    btnRemove.setEnabled(editable); 
+        txtId.setText(String.valueOf(bill.getId()));
+        txtCardId.setText("Card #" + bill.getCardId());
+        txtCheckin.setText(XDate.format(bill.getCheckin(), "HH:mm:ss dd-MM-yyyy"));
+        txtUsername.setText(bill.getUsername());
+        String[] statuses = {"Servicing", "Completed", "Canceled"};
+        txtStatus.setText(statuses[bill.getStatus()]);
+        if (bill.getCheckout() != null) {
+            txtCheckout.setText(XDate.format(bill.getCheckout(), "HH:mm:ss dd-MM-yyyy"));
+        }
+
+        boolean editable = (bill.getStatus() == 0);
+        btnAdd.setEnabled(editable);
+        btnCancel.setEnabled(editable);
+        btnCheckout.setEnabled(editable);
+        btnRemove.setEnabled(editable);
+
+//   txtId.setText(String.valueOf(bill.getId())); 
+//    txtCardId.setText("Card #" + bill.getCardId()); 
+//    txtCheckin.setText(XDate.format(bill.getCheckin(), "HH:mm:ss dd-MM-yyyy")); 
+//    txtUsername.setText(bill.getUsername()); 
+//    String[] statuses = {"Servicing", "Completed", "Canceled"}; 
+//    txtStatus.setText(statuses[bill.getStatus()]); 
+//    if (bill.getCheckout() != null) { 
+//        txtCheckout.setText(XDate.format(bill.getCheckout(), "HH:mm:ss dd-MM-yyyy")); 
+//    } 
+//    boolean editable = (bill.getStatus() == 0); 
+//    btnAdd.setEnabled(editable); 
+//    btnCancel.setEnabled(editable); 
+//    btnCheckout.setEnabled(editable); 
+//    btnRemove.setEnabled(editable); 
 
     }
 
@@ -440,19 +440,28 @@ public class BillJDialog extends javax.swing.JDialog implements BillC {
     }
 
     @Override
-    public void showDrinkJDialog() {
-        DrinkJDialog dialog = new DrinkJDialog((Frame) this.getOwner(), true);
-        dialog.setBill(bill); // bill chứa đồ uống chọn thêm
-        dialog.setVisible(true);
-
-        // Refresh bill details khi cửa sổ chọn đồ uống (DrinkJDialog) đóng lại
-        dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosed(java.awt.event.WindowEvent e) {
-                BillJDialog.this.fillBillDetails();
-            }
-        });
-
+    public void showDrinkJDialog() {   
+        DrinkJDialog dialog = new DrinkJDialog((Frame) this.getOwner(), true); 
+    dialog.setBill(bill); // Khai báo vào DrinkJDialog @Setter Bill bill 
+    dialog.setVisible(true); 
+    dialog.addWindowListener(new java.awt.event.WindowAdapter() { 
+        @Override 
+        public void windowClosed(java.awt.event.WindowEvent e) { 
+            BillJDialog.this.fillBillDetails(); 
+        } 
+    });
+//        DrinkJDialog dialog = new DrinkJDialog((Frame) this.getOwner(), true);
+//        dialog.setBill(bill); // bill chứa đồ uống chọn thêm
+//        dialog.setVisible(true);
+//
+//        // Refresh bill details khi cửa sổ chọn đồ uống (DrinkJDialog) đóng lại
+//        dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+//            @Override
+//            public void windowClosed(java.awt.event.WindowEvent e) {
+//                BillJDialog.this.fillBillDetails();
+//            }
+//        });
+//
 //    DrinkJDialog dialog = new DrinkJDialog((Frame) this.getOwner(), true);
 //    dialog.setBill(bill); // truyền bill để thêm chi tiết
 //

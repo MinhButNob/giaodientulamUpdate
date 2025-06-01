@@ -15,7 +15,6 @@ import com.mycompany.giaodientulam.impl.CategoryDaoImpl;
 import com.mycompany.giaodientulam.impl.DrinkDaoImpl;
 import com.mycompany.giaodientulam.util.XDialog;
 import java.util.List;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -136,7 +135,7 @@ public class DrinkJDialog extends javax.swing.JDialog implements DrinkC {
 
     private void tblDrinksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDrinksMouseClicked
         // TODO add your handling code here:
-            if(evt.getClickCount() == 2){
+                if(evt.getClickCount() == 1){
             this.addDrinkToBill();
         }
     }//GEN-LAST:event_tblDrinksMouseClicked
@@ -218,23 +217,23 @@ public void open() {
 
 @Override
 public void fillCategories() {
-//    CategoryDao categoryDao = new CategoryDaoImpl();
-//    categories = categoryDao.findAll();
-//    DefaultTableModel model = (DefaultTableModel) tblCategories.getModel();
-//    model.setRowCount(0);
-//    categories.forEach(d -> model.addRow(new Object[] {d.getName()}));
-//    tblCategories.setRowSelectionInterval(0, 0);
-
     CategoryDao categoryDao = new CategoryDaoImpl();
     categories = categoryDao.findAll();
-    
     DefaultTableModel model = (DefaultTableModel) tblCategories.getModel();
     model.setRowCount(0);
     categories.forEach(d -> model.addRow(new Object[] {d.getName()}));
+    tblCategories.setRowSelectionInterval(0, 0);
 
-    if (!categories.isEmpty()) {
-        tblCategories.setRowSelectionInterval(0, 0); // chọn dòng đầu tiên
-    }
+//    CategoryDao categoryDao = new CategoryDaoImpl();
+//    categories = categoryDao.findAll();
+//    
+//    DefaultTableModel model = (DefaultTableModel) tblCategories.getModel();
+//    model.setRowCount(0);
+//    categories.forEach(d -> model.addRow(new Object[] {d.getName()}));
+//
+//    if (!categories.isEmpty()) {
+//        tblCategories.setRowSelectionInterval(0, 0); // chọn dòng đầu tiên
+//    }
 }
 
 @Override
