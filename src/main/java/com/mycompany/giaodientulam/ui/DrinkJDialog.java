@@ -15,6 +15,7 @@ import com.mycompany.giaodientulam.impl.CategoryDaoImpl;
 import com.mycompany.giaodientulam.impl.DrinkDaoImpl;
 import com.mycompany.giaodientulam.util.XDialog;
 import java.util.List;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -29,7 +30,25 @@ public class DrinkJDialog extends javax.swing.JDialog implements DrinkC {
     public DrinkJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+//        System.out.println("Row chọn: " + tblCategories.getSelectedRow());
+//        System.out.println("Drinks size: " + drinks.size());
+//    tblCategories.getSelectionModel().addListSelectionListener(e -> {
+//        if (!e.getValueIsAdjusting()) {
+//            fillDrinks(); // Gọi khi chọn xong dòng
+//        }
+//    });tblDrinks.addMouseListener(new java.awt.event.MouseAdapter() {
+//    @Override
+//    public void mouseClicked(java.awt.event.MouseEvent evt) {
+//        if (evt.getClickCount() == 2 && evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
+//            int row = tblDrinks.getSelectedRow();
+//            if (row >= 0) {
+//                selectDrink(row);
+//            }
+//        }
+//    }
+//});
+
+
     }
 
     /**
@@ -98,8 +117,8 @@ public class DrinkJDialog extends javax.swing.JDialog implements DrinkC {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -117,7 +136,7 @@ public class DrinkJDialog extends javax.swing.JDialog implements DrinkC {
 
     private void tblDrinksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDrinksMouseClicked
         // TODO add your handling code here:
-                if(evt.getClickCount() == 2){
+            if(evt.getClickCount() == 2){
             this.addDrinkToBill();
         }
     }//GEN-LAST:event_tblDrinksMouseClicked
@@ -165,6 +184,7 @@ public class DrinkJDialog extends javax.swing.JDialog implements DrinkC {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 DrinkJDialog dialog = new DrinkJDialog(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
@@ -198,12 +218,23 @@ public void open() {
 
 @Override
 public void fillCategories() {
+//    CategoryDao categoryDao = new CategoryDaoImpl();
+//    categories = categoryDao.findAll();
+//    DefaultTableModel model = (DefaultTableModel) tblCategories.getModel();
+//    model.setRowCount(0);
+//    categories.forEach(d -> model.addRow(new Object[] {d.getName()}));
+//    tblCategories.setRowSelectionInterval(0, 0);
+
     CategoryDao categoryDao = new CategoryDaoImpl();
     categories = categoryDao.findAll();
+    
     DefaultTableModel model = (DefaultTableModel) tblCategories.getModel();
     model.setRowCount(0);
     categories.forEach(d -> model.addRow(new Object[] {d.getName()}));
-    tblCategories.setRowSelectionInterval(0, 0);
+
+    if (!categories.isEmpty()) {
+        tblCategories.setRowSelectionInterval(0, 0); // chọn dòng đầu tiên
+    }
 }
 
 @Override
@@ -224,6 +255,31 @@ public void fillDrinks() {
         };
         model.addRow(row);
     });
+
+//    int row = tblCategories.getSelectedRow();
+//    System.out.println("Row selected: " + row); // debug
+//
+//    if (row == -1 || row >= categories.size()) {
+//        return; // Không có dòng nào được chọn hoặc vượt chỉ số
+//    }
+//
+//    Category category = categories.get(row);
+//    DrinkDao drinkDao = new DrinkDaoImpl();
+//    drinks = drinkDao.findByCategoryId(category.getId());
+//
+//    System.out.println("Drinks size: " + drinks.size()); // debug
+//
+//    DefaultTableModel model = (DefaultTableModel) tblDrinks.getModel();
+//    model.setRowCount(0);
+//    drinks.forEach(d -> {
+//        Object[] rowData = {
+//            d.getId(), 
+//            d.getName(), 
+//            String.format("$%.1f", d.getUnitPrice()), 
+//            String.format("%.0f%%", d.getDiscount() * 100)
+//        };
+//        model.addRow(rowData);
+//    });
 }
 
 @Override

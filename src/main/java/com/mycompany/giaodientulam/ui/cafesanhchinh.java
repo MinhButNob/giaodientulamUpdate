@@ -285,7 +285,7 @@ public class cafesanhchinh extends javax.swing.JFrame implements cafesanhchinhC 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new BillJDialog(this, rootPaneCheckingEnabled).setVisible(true);
+        new SalesJDialog(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnDoUongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoUongActionPerformed

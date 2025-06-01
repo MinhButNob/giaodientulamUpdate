@@ -10,6 +10,7 @@ import com.mycompany.giaodientulam.entity.Bill;
 import com.mycompany.giaodientulam.entity.billDetail;
 import com.mycompany.giaodientulam.impl.BillDAOimpl;
 import com.mycompany.giaodientulam.impl.BillDetailDAOImpl;
+import com.mycompany.giaodientulam.ui.manager.CardManager;
 import com.mycompany.giaodientulam.util.XDate;
 import com.mycompany.giaodientulam.util.XDialog;
 import java.awt.Frame;
@@ -17,7 +18,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import lombok.Setter;
 
 /**
  *
@@ -276,7 +276,7 @@ public class BillJDialog extends javax.swing.JDialog implements BillC {
 
     private void tblBillDetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBillDetailsMouseClicked
         // TODO add your handling code here:
-                if (evt.getClickCount() == 2) {
+            if (evt.getClickCount() == 2) {
             this.updateQuantity();
         }
     }//GEN-LAST:event_tblBillDetailsMouseClicked
@@ -365,12 +365,20 @@ public class BillJDialog extends javax.swing.JDialog implements BillC {
 
     @Override
     public void open() {
+
         this.setLocationRelativeTo(null);
         if (bill == null) {
-            bill = billDao.findById(20001L);
+            bill = billDao.findById(10000l);
         }
-        this.setForm(bill);
-        this.fillBillDetails();
+//        this.setForm(bill);
+//        this.fillBillDetails(); 
+
+    if (this.bill == null) {
+        XDialog.alert(null, "Chưa nhận được phiếu bán hàng!");
+        this.dispose(); return;
+    }
+    this.setForm(bill);
+    this.fillBillDetails();
     }
 
     @Override
@@ -444,6 +452,19 @@ public class BillJDialog extends javax.swing.JDialog implements BillC {
                 BillJDialog.this.fillBillDetails();
             }
         });
+
+//    DrinkJDialog dialog = new DrinkJDialog((Frame) this.getOwner(), true);
+//    dialog.setBill(bill); // truyền bill để thêm chi tiết
+//
+//    // Đặt listener trước khi hiển thị
+//    dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+//        @Override
+//        public void windowClosed(java.awt.event.WindowEvent e) {
+//            fillBillDetails(); // refresh lại bảng
+//        }
+//    });
+//
+//    dialog.setVisible(true); // hiện dialog modal
     }
 
     @Override
@@ -477,6 +498,8 @@ public class BillJDialog extends javax.swing.JDialog implements BillC {
             bill.setCheckout(new Date());
             billDao.update(bill);
             this.setForm(bill);
+            this.fillBillDetails();
+            
         }
     }
 
@@ -495,19 +518,21 @@ public class BillJDialog extends javax.swing.JDialog implements BillC {
     @Override
     public void setBill(Bill bill) {
         txtId.setText(String.valueOf(bill.getId()));
-        txtCardId.setText("Card #" + bill.getCardId());
-        txtCheckin.setText(XDate.format(bill.getCheckin(), "HH:mm:ss dd-MM-yyyy"));
-        txtUsername.setText(bill.getUsername());
-        String[] statuses = {"Servicing", "Completed", "Canceled"};
-        txtStatus.setText(statuses[bill.getStatus()]);
-        if (bill.getCheckout() != null) {
-            txtCheckout.setText(XDate.format(bill.getCheckout(), "HH:mm:ss dd-MM-yyyy"));
-        }
-
-        boolean editable = (bill.getStatus() == 0);
-        btnAdd.setEnabled(editable);
-        btnCancel.setEnabled(editable);
-        btnCheckout.setEnabled(editable);
-        btnRemove.setEnabled(editable);
+        this.bill = bill; 
+    txtId.setText(String.valueOf(bill.getId()));
+    txtCardId.setText("Card #" + bill.getCardId());
+    txtCheckin.setText(XDate.format(bill.getCheckin(), "HH:mm:ss dd-MM-yyyy"));
+    txtUsername.setText(bill.getUsername());
+    String[] statuses = {"Servicing", "Completed", "Canceled"};
+    txtStatus.setText(statuses[bill.getStatus()]);
+    if (bill.getCheckout() != null) {
+        txtCheckout.setText(XDate.format(bill.getCheckout(), "HH:mm:ss dd-MM-yyyy"));
+    }
+    boolean editable = (bill.getStatus() == 0);
+    btnAdd.setEnabled(editable);
+    btnCancel.setEnabled(editable);
+    btnCheckout.setEnabled(editable);
+    btnRemove.setEnabled(editable);
+    this.fillBillDetails();
     }
 }

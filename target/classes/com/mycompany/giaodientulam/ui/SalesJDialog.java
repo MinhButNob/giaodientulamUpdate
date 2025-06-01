@@ -29,6 +29,7 @@ public class SalesJDialog extends javax.swing.JDialog implements SaleC {
     public SalesJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
     }
 
     /**
