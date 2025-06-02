@@ -107,4 +107,84 @@ public class BillDAOimpl implements billDao {
     public Bill findById(Long id) {
         return XQuery.getSingleBean(Bill.class, findByIdSql, id);
     }
+<<<<<<< Updated upstream
+=======
+    
+    
+    
+//    
+//    @Override
+//    public Bill create(Bill entity) {
+//        Object[] values = {
+//            entity.getUsername(),
+//            entity.getCardId(),
+//            entity.getCheckin(),
+//            entity.getStatus()
+//        };
+//        XJdbc.executeUpdate(createSql, values);
+//        return XQuery.getSingleBean(Bill.class, findLastSql);
+//    }
+//
+//    @Override
+//    public void update(Bill entity) {
+//        Object[] values = {
+//            entity.getUsername(),
+//            entity.getCardId(),
+//            entity.getCheckin(),
+//            entity.getCheckout(),
+//            entity.getStatus(),
+//            entity.getId()
+//        };
+//        XJdbc.executeUpdate(updateSql, values);
+//    }
+//
+//    @Override
+//    public void deleteById(Long id) {
+//        XJdbc.executeUpdate(deleteByIdSql, id);
+//    }
+//
+//    @Override
+//    public List<Bill> findAll() {
+//        return XQuery.getBeanList(Bill.class, findAllSql);
+//    }
+//
+//    @Override
+//    public Bill findById(Long id) {
+//        return XQuery.getSingleBean(Bill.class, findByIdSql, id);
+//    }
+//    
+//    @Override
+//    public List<Bill> findByUsername(String username) {
+//        return XQuery.getBeanList(Bill.class, findByUsernameSql, username);
+//    }
+//
+//    @Override
+//    public List<Bill> findByCardId(Integer cardId) {
+//        return XQuery.getBeanList(Bill.class, findByCardIdSql, cardId);
+//    }
+//
+//    @Override
+//    public Bill findServicingByCardId(Integer cardId) {
+//        Bill bill = XQuery.getSingleBean(Bill.class, findServicingByCardIdSql, cardId);
+//        if (bill == null) {
+//            Bill newBill = new Bill();
+//            newBill.setCardId(cardId);
+//            newBill.setCheckin(new Date());
+//            newBill.setStatus(0);
+//            newBill.setUsername(XAuth.user.getUsername());
+//            bill = this.create(newBill);
+//        }
+//        return bill;
+//    }
+//
+//    @Override
+//    public List<Bill> findByUserAndTimeRange(String username, Date begin, Date end) {
+//        return XQuery.getBeanList(Bill.class, findByUsernameAndTimeRangeSql, username, begin, end);
+//    }
+//
+//    @Override
+//    public List<Bill> findByTimeRange(Date begin, Date end) {
+//        return XQuery.getBeanList(Bill.class, findByTimeRangeSql, begin, end);
+//    }
+>>>>>>> Stashed changes
 }

@@ -2,6 +2,7 @@ com\mycompany\giaodientulam\ui\manager\BillManager$4.class
 com\mycompany\giaodientulam\ui\manager\CategoryManager$11.class
 com\mycompany\giaodientulam\ui\manager\CategoryManager$9.class
 com\mycompany\giaodientulam\ui\manager\CardManager$6.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$2.class
 com\mycompany\giaodientulam\ui\LoginC.class
 com\mycompany\giaodientulam\ui\manager\DrinkManager$3.class
 doimk.class
@@ -10,7 +11,6 @@ com\mycompany\giaodientulam\ui\manager\UserManager$5.class
 com\mycompany\giaodientulam\ui\SalesJDialog$2.class
 com\mycompany\giaodientulam\ui\manager\CardManager$11.class
 com\mycompany\giaodientulam\ui\manager\CardC.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$9.class
 com\mycompany\giaodientulam\ui\DrinkJDialog$3.class
 com\mycompany\giaodientulam\ui\manager\BillManager$12.class
 com\mycompany\giaodientulam\ui\manager\CategoryManager$13$1.class
@@ -19,7 +19,6 @@ com\mycompany\giaodientulam\ui\manager\DrinkManager$8.class
 com\mycompany\giaodientulam\ui\component\Drink$1.class
 com\mycompany\giaodientulam\ui\manager\CategoryController.class
 com\mycompany\giaodientulam\ui\manager\UserManager$18.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$10.class
 com\mycompany\giaodientulam\ui\component\Radio.class
 com\mycompany\giaodientulam\ui\History$1.class
 com\mycompany\giaodientulam\ui\manager\UserManager$12.class
@@ -33,7 +32,6 @@ com\mycompany\giaodientulam\ui\manager\CategoryManager$4.class
 com\mycompany\giaodientulam\ui\manager\CardManager$10.class
 com\mycompany\giaodientulam\dao\billdetailDao.class
 com\mycompany\giaodientulam\entity\Revenue$ByUser.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$3.class
 com\mycompany\giaodientulam\ui\manager\UserManager$17.class
 com\mycompany\giaodientulam\ui\DrinkJDialog$4.class
 com\mycompany\giaodientulam\ui\manager\DrinkManager$9.class
@@ -41,7 +39,6 @@ com\mycompany\giaodientulam\ui\Login$2.class
 com\mycompany\giaodientulam\ui\component\Image.class
 com\mycompany\giaodientulam\ui\component\Timefliter$3.class
 com\mycompany\giaodientulam\ui\manager\CrudController.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$4.class
 com\mycompany\giaodientulam\ui\manager\CategoryManager$10.class
 com\mycompany\giaodientulam\ui\doimkC.class
 com\mycompany\giaodientulam\ui\manager\DrinkManager$4.class
@@ -67,8 +64,10 @@ com\mycompany\giaodientulam\util\XDialog.class
 com\mycompany\giaodientulam\entity\Drink.class
 com\mycompany\giaodientulam\impl\CardDaoImpl.class
 com\mycompany\giaodientulam\ui\component\File$2.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$9.class
 com\mycompany\giaodientulam\ui\manager\CategoryManager$8.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$2.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$11.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$6.class
 com\mycompany\giaodientulam\ui\component\Slider$1.class
 com\mycompany\giaodientulam\ui\manager\RevenueManager$3.class
 com\mycompany\giaodientulam\ui\manager\UserManager$24.class
@@ -80,6 +79,7 @@ com\mycompany\giaodientulam\ui\manager\UserManager$9.class
 com\mycompany\giaodientulam\ui\manager\BillManager$8.class
 com\mycompany\giaodientulam\ui\manager\DrinkManager$2.class
 com\mycompany\giaodientulam\ui\manager\BillManager$16.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$7.class
 com\mycompany\giaodientulam\ui\Login.class
 com\mycompany\giaodientulam\ui\component\Image$1.class
 com\mycompany\giaodientulam\ui\manager\BillManager$9.class
@@ -104,6 +104,8 @@ com\mycompany\giaodientulam\dao\billDao.class
 com\mycompany\giaodientulam\ui\manager\DrinkManager$1.class
 com\mycompany\giaodientulam\ui\component\Image$2.class
 com\mycompany\giaodientulam\ui\manager\BillManager.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$8.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$10.class
 com\mycompany\giaodientulam\ui\DrinkJDialog$1.class
 com\mycompany\giaodientulam\util\XQuery.class
 com\mycompany\giaodientulam\ui\History$3.class
@@ -114,7 +116,6 @@ com\mycompany\giaodientulam\ui\manager\BillManager$1.class
 com\mycompany\giaodientulam\ui\manager\BillManager$7.class
 com\mycompany\giaodientulam\ui\component\Timefliter.class
 com\mycompany\giaodientulam\dao\DrinkDao.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$1.class
 com\mycompany\giaodientulam\ui\BillJDialog$3.class
 com\mycompany\giaodientulam\ui\manager\CardManager$3.class
 com\mycompany\giaodientulam\ui\manager\UserManager$8.class
@@ -147,7 +148,7 @@ com\mycompany\giaodientulam\ui\manager\UserManager$23.class
 com\mycompany\giaodientulam\dao\CategoryDao.class
 com\mycompany\giaodientulam\impl\CategoryDaoImpl.class
 com\mycompany\giaodientulam\entity\Card.class
-com\mycompany\giaodientulam\ui\cafesanhchinh.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$4.class
 com\mycompany\giaodientulam\ui\manager\UserManager$16.class
 com\mycompany\giaodientulam\ui\manager\RevenueManager$1.class
 com\mycompany\giaodientulam\ui\manager\DrinkManager$13.class
@@ -158,6 +159,7 @@ com\mycompany\giaodientulam\ui\manager\UserManager$7.class
 com\mycompany\giaodientulam\ui\manager\UserManager$22.class
 com\mycompany\giaodientulam\dao\CardDao.class
 com\mycompany\giaodientulam\ui\manager\UserManager$1.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$5.class
 com\mycompany\giaodientulam\ui\manager\CategoryManager$2.class
 com\mycompany\giaodientulam\ui\component\Timefliter$2.class
 com\mycompany\giaodientulam\ui\chao$2.class
@@ -170,7 +172,6 @@ com\mycompany\giaodientulam\util\XAuth.class
 com\mycompany\giaodientulam\impl\UserDaoImpl.class
 com\mycompany\giaodientulam\ui\manager\BillManagerController.class
 com\mycompany\giaodientulam\ui\DrinkC.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$8.class
 com\mycompany\giaodientulam\ui\component\Drink.class
 com\mycompany\giaodientulam\ui\manager\BillManager$11.class
 com\mycompany\giaodientulam\ui\manager\DrinkManager$11.class
@@ -178,6 +179,7 @@ com\mycompany\giaodientulam\ui\manager\CategoryManager$5.class
 com\mycompany\giaodientulam\impl\BillDetailDAOImpl.class
 com\mycompany\giaodientulam\ui\manager\UserManager$11.class
 com\mycompany\giaodientulam\ui\manager\UserManager$21.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame.class
 com\mycompany\giaodientulam\ui\BillJDialog.class
 com\mycompany\giaodientulam\entity\Revenue$ByCategory$ByCategoryBuilder.class
 com\mycompany\giaodientulam\ui\manager\UserManager$24$1.class
@@ -186,8 +188,8 @@ com\mycompany\giaodientulam\ui\manager\BillManager$5.class
 com\mycompany\giaodientulam\ui\BillJDialog$5.class
 com\mycompany\giaodientulam\ui\manager\UserManager$6.class
 com\mycompany\giaodientulam\ui\manager\UserController.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$5.class
 com\mycompany\giaodientulam\ui\component\Radio$1.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$3.class
 com\mycompany\giaodientulam\dao\QueryDao.class
 com\mycompany\giaodientulam\ui\doimk.class
 com\mycompany\giaodientulam\ui\manager\CategoryManager$12.class
@@ -206,11 +208,10 @@ com\mycompany\giaodientulam\ui\manager\CategoryManager$13.class
 com\mycompany\giaodientulam\ui\BillJDialog$8.class
 com\mycompany\giaodientulam\entity\Category.class
 com\mycompany\giaodientulam\ui\component\Timefliter$1.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$6.class
 com\mycompany\giaodientulam\util\XIcon.class
 com\mycompany\giaodientulam\ui\manager\CategoryManager$3.class
 com\mycompany\giaodientulam\ui\manager\BillManager$10.class
-com\mycompany\giaodientulam\ui\cafesanhchinh$7.class
+com\mycompany\giaodientulam\ui\PolyCafeJFrame$1.class
 com\mycompany\giaodientulam\ui\manager\UserManager$14.class
 com\mycompany\giaodientulam\ui\component\Drink$2.class
 com\mycompany\giaodientulam\ui\manager\CardManager$13.class

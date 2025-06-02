@@ -268,6 +268,7 @@ public class Login extends javax.swing.JFrame implements LoginC {
 
 @Override
 public void login() {
+    new chao().setVisible(true);
     String username = txtUsername.getText();
     String password = txtPassword.getText();
     UserDao dao = new UserDaoImpl();
@@ -282,9 +283,12 @@ public void login() {
         XAuth.user = user;
         this.dispose();
         java.awt.EventQueue.invokeLater(() -> {
-            new cafesanhchinh().setVisible(true);
+            new PolyCafeJFrame().setVisible(true);
         });
     }
 }
 }
+
+
+
 

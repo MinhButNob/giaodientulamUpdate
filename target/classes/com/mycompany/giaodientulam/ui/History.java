@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import com.mycompany.giaodientulam.entity.Bill;
+import java.time.ZoneId;
 /**
  *
  * @author Lenovo
@@ -237,8 +238,10 @@ public class History extends javax.swing.JDialog implements HistoryC {
         }
         Date begin = java.sql.Date.valueOf(range.getBegin());
         Date end = java.sql.Date.valueOf(range.getEnd());
-//        txtBegin.setText(XDate.format(range.getBegin()));
-//        txtEnd.setText(XDate.format(range.getEnd()));
+        Date endDate = Date.from(range.getEnd().atStartOfDay(ZoneId.systemDefault()).toInstant());
+txtEnd.setText(XDate.format(endDate));
+        Date beginDate = Date.from(range.getBegin().atStartOfDay(ZoneId.systemDefault()).toInstant());
+txtBegin.setText(XDate.format(beginDate));
         this.fillBills();
     }
 
